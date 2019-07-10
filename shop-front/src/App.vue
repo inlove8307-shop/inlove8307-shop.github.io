@@ -353,11 +353,22 @@ main {
             span {
               overflow: hidden;
               display: block;
+              position: relative;
               margin: 1rem 1rem 0 1rem;
               height: 30rem;
-              border-top: 0.1rem solid rgba(255, 255, 255, 0.7);
               font-size: 1.4rem;
-              color: rgba(255, 255, 255, 1);
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                border: 0.1rem solid rgba(0, 0, 0, 0.5);
+                box-shadow: inset 0 0 0.3rem rgba(0, 0, 0, 0.5);
+              }
 
               img {
                 width: 100%;
