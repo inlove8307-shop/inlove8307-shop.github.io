@@ -11,7 +11,6 @@
       <h1>타이틀</h1>
       <menu>
         <a href="">로그인</a>
-        <a href="">로그인</a>
       </menu>
     </header>
     <main>
