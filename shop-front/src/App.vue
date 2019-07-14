@@ -11,6 +11,7 @@
       <h1>타이틀</h1>
       <menu>
         <a href="">로그인</a>
+        <a href="">로그인</a>
       </menu>
     </header>
     <main>
@@ -271,10 +272,14 @@ header {
   }
 
   menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 1rem;
     margin: 0;
     padding: 0;
+    height: 100%;
 
     a {
       margin-left: 0.5rem;
@@ -286,7 +291,7 @@ header {
 }
 
 main {
-  margin-top: 10rem;
+  padding-top: 10rem;
 
   nav {
     a {}
@@ -466,7 +471,7 @@ footer {
   }
 
   main {
-    margin-top: 7.81vw;
+    padding-top: 7.81vw;
 
     section {
       padding: 0.78vw 0 1.95vw 0;
@@ -572,7 +577,7 @@ footer {
   }
 
   main {
-    margin-top: 15.65vw;
+    padding-top: 15.65vw;
 
     section {
       padding: 1.56vw 0 3.9vw 0;
