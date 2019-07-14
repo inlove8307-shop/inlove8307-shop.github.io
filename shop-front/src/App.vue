@@ -251,10 +251,17 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  // position: relative;
   height: 10rem;
-  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.85);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
   text-align: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
 
   h1 {
     margin: 0;
@@ -279,6 +286,8 @@ header {
 }
 
 main {
+  margin-top: 10rem;
+
   nav {
     a {}
   }
@@ -289,7 +298,6 @@ main {
       position: relative;
       margin: 0 1rem 0 1rem;
       height: 30rem;
-      border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
       background-image: url('./assets/images/bg_section.jpg');
       background-repeat: repeat;
       background-position: 0 50%;
@@ -305,6 +313,7 @@ main {
         margin: 0;
         width: 100%;
         height: 100%;
+        border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
         background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -320,7 +329,7 @@ main {
       h3 {
         margin: 0;
         padding: 1rem 0;
-        border-bottom: 0.1rem solid rgba(255, 255, 255, 0.85);
+        border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
         font-weight: 300;
         font-size: 1.6rem;
         color: rgba(255, 255, 255, 1);
@@ -354,7 +363,7 @@ main {
               display: block;
               position: relative;
               margin: 1rem 1rem 0 1rem;
-              height: 30rem;
+              height: 15.62vw;
               font-size: 1.4rem;
 
               &::before {
@@ -416,7 +425,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 10rem;
-  border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.25);
   background-color: rgba(0, 0, 0, 0.85);
   font-weight: 300;
   font-size: 1.6rem;
@@ -457,6 +466,8 @@ footer {
   }
 
   main {
+    margin-top: 7.81vw;
+
     section {
       padding: 0.78vw 0 1.95vw 0;
 
@@ -561,8 +572,10 @@ footer {
   }
 
   main {
+    margin-top: 15.65vw;
+
     section {
-      padding: 3.12vw 0 3.9vw 0;
+      padding: 1.56vw 0 3.9vw 0;
 
       h2 {
         margin: 0 1.56vw;
