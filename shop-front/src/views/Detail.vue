@@ -98,7 +98,7 @@ main {
 
   section {
     box-sizing: border-box;
-    padding: 0;
+    padding: 0 0 4rem 0;
     width: 108rem;
 
     h2 {
@@ -187,6 +187,7 @@ main {
 
       .detail {
         p {
+          margin: 3rem 0 0 0;
           font-size: 1.4rem;
           color: rgba(255, 255, 255, 1);
         }
@@ -210,11 +211,6 @@ main {
 @media (min-width: 481px) and (max-width: 1024px) {
   /* ##Device = Low Resolution Tablets, Mobiles (Landscape) ##Screen = B/w 481px to 767px */
   main {
-    flex: 1;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-
     aside {
       menu {
         button {}
@@ -223,65 +219,44 @@ main {
 
     section {
       box-sizing: border-box;
-      padding: 0;
-      width: 108rem;
+      padding: 0 0.69vw 3.47vw;
+      width: 100%;
 
       h2 {
-        margin: 0;
-        padding: 2rem 0;
-        font-weight: 300;
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 1);
+        padding: 1.38vw 0;
+        font-size: 1.56vw;
       }
 
       article {
         .infomation {
-          position: relative;
-          box-sizing: border-box;
-          padding-left: 55rem;
-          min-height: 54rem;
+          padding-left: 51vw;
+          min-height: 50vw;
 
           img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            box-sizing: border-box;
-            width: 54rem;
-            border: 0.1rem solid rgba(0, 0, 0, 1);
+            width: 50vw;
+            border-width: 0.13vw;
           }
 
           .scroll {
-            overflow-x: hidden;
-            overflow-y: auto;
-            height: 50rem;
+            height: 50vw;
 
             table {
-              width: 100%;
-              border-collapse: collapse;
-              border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
+              border-top-width: 0.13vw;
 
-              caption {
-                display: none;
-              }
+              caption {}
 
               tbody {
                 tr {
                   th {
-                    padding: 1rem 0;
-                    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-                    font-weight: 400;
-                    font-size: 1.4rem;
-                    text-align: left;
-                    color: rgba(255, 255, 255, 1);
+                    padding: 1.69vw 0;
+                    border-bottom-width: 0.13vw;
+                    font-size: 1.56vw;
                   }
 
                   td {
-                    padding: 1rem 0;
-                    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-                    font-weight: 400;
-                    font-size: 1.4rem;
-                    text-align: right;
-                    color: rgba(255, 255, 255, 1);
+                    padding: 1.69vw 0;
+                    border-bottom-width: 0.13vw;
+                    font-size: 1.56vw;
                   }
                 }
               }
@@ -289,31 +264,19 @@ main {
           }
 
           .buttons {
-            display: flex;
-            justify-content: stretch;
-            align-items: stretch;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 53rem;
-            height: 4rem;
+            width: 47.62vw;
+            height: 5.55vw;
 
             button {
-              flex: 1;
-              border: 0;
-              background-color: rgba(255, 0, 0, 1);
-              font-family: 'Noto Sans KR';
-              font-weight: 400;
-              font-size: 1.4rem;
-              color: rgba(255, 255, 255, 1);
+              font-size: 1.56vw;
             }
           }
         }
 
         .detail {
           p {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 1);
+            margin: 2.77vw 0 0 0;
+            font-size: 1.56vw;
           }
         }
       }
@@ -330,40 +293,34 @@ main {
     }
 
     section {
+      box-sizing: border-box;
+      padding: 0 1.38vw 6.94vw;
       width: 100%;
 
       h2 {
-        padding: 2rem 0;
-        font-weight: 300;
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 1);
+        padding: 2.77vw 0;
+        font-size: 3.12vw;
       }
 
       article {
         .infomation {
-          position: relative;
-          box-sizing: border-box;
-          padding-left: 55rem;
-          min-height: 54rem;
+          padding-left: 0;
+          min-height: initial;
 
           img {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: initial;
             box-sizing: border-box;
-            width: 54rem;
-            border: 0.1rem solid rgba(0, 0, 0, 1);
+            width: 100%;
+            border-width: 0.27vw;
           }
 
           .scroll {
-            overflow-x: hidden;
-            overflow-y: auto;
-            height: 50rem;
+            height: auto;
 
             table {
+              margin-top: 2.77vw;
               width: 100%;
-              border-collapse: collapse;
-              border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
+              border-top-width: 0.27vw;
 
               caption {
                 display: none;
@@ -372,21 +329,15 @@ main {
               tbody {
                 tr {
                   th {
-                    padding: 1rem 0;
-                    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-                    font-weight: 400;
-                    font-size: 1.4rem;
-                    text-align: left;
-                    color: rgba(255, 255, 255, 1);
+                    padding: 1.38vw 0;
+                    border-bottom-width: 0.27vw;
+                    font-size: 3.12vw;
                   }
 
                   td {
-                    padding: 1rem 0;
-                    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-                    font-weight: 400;
-                    font-size: 1.4rem;
-                    text-align: right;
-                    color: rgba(255, 255, 255, 1);
+                    padding: 1.38vw 0;
+                    border-bottom-width: 0.27vw;
+                    font-size: 3.12vw;
                   }
                 }
               }
@@ -394,31 +345,21 @@ main {
           }
 
           .buttons {
-            display: flex;
-            justify-content: stretch;
-            align-items: stretch;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 53rem;
-            height: 4rem;
+            position: initial;
+            margin-top: 2.77vw;
+            width: 100%;
+            height: 11.11vw;
 
             button {
-              flex: 1;
-              border: 0;
-              background-color: rgba(255, 0, 0, 1);
-              font-family: 'Noto Sans KR';
-              font-weight: 400;
-              font-size: 1.4rem;
-              color: rgba(255, 255, 255, 1);
+              font-size: 3.12vw;
             }
           }
         }
 
         .detail {
           p {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 1);
+            margin: 5.55vw 0 0 0;
+            font-size: 3.12vw;
           }
         }
       }
