@@ -333,7 +333,6 @@ main {
       width: 100%;
 
       h2 {
-        margin: 0;
         padding: 2rem 0;
         font-weight: 300;
         font-size: 1.4rem;
