@@ -174,6 +174,7 @@ main {
         background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        font-family: 'Noto Sans KR';
         text-align: center;
         font-weight: 300;
         font-size: 1.6rem;
@@ -187,6 +188,7 @@ main {
         margin: 0;
         padding: 1rem 0;
         border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
+        font-family: 'Noto Sans KR';
         font-weight: 300;
         font-size: 1.6rem;
         color: rgba(255, 255, 255, 1);

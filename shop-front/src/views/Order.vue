@@ -67,7 +67,7 @@
           </ul>
         </div>
         <div class="buttons">
-          <router-link to="/">취소</router-link>
+          <router-link to="/detail">취소</router-link>
           <router-link to="/history">주문</router-link>
         </div>
       </article>
@@ -364,13 +364,13 @@ main {
           bottom: 0;
           box-sizing: border-box;
           margin-top: 0;
-          padding: 0.69vw;
+          padding: 1.38vw;
           height: 7.81vw;
-          border-top: 0.13vw solid rgba(255, 255, 255, 0.25);
+          border-top: 0.13vw solid rgba(255, 255, 255, 0.5);
           background-color: rgba(0, 0, 0, 1);
 
           button, a {
-            margin-left: 0.69vw;
+            margin-left: 1.38vw;
             font-size: 1.94vw;
           }
         }
@@ -491,14 +491,14 @@ main {
           bottom: 0;
           box-sizing: border-box;
           margin-top: 0;
-          padding: 1.38vw;
+          padding: 2.76vw;
           width: 100%;
           height: 15.62vw;
-          border-top: 0.27vw solid rgba(255, 255, 255, 0.25);
+          border-top: 0.27vw solid rgba(255, 255, 255, 0.5);
           background-color: rgba(0, 0, 0, 1);
 
           button, a {
-            margin-left: 1.38vw;
+            margin-left: 2.76vw;
             font-size: 3.88vw;
           }
         }
