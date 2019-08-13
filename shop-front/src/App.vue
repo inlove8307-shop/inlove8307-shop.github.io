@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <header>
-      <h1><router-link to="/">타이틀</router-link></h1>
+      <h1><router-link to="/">SHOP</router-link></h1>
       <menu>
-        <router-link to="/signin">로그인</router-link>
-        <router-link to="/signup">회원가입</router-link>
+        <router-link to="/signin">LOGIN</router-link>
+        <!-- <router-link to="/signup">회원가입</router-link> -->
       </menu>
     </header>
 
@@ -65,6 +65,9 @@ header {
   background: rgba(0, 0, 0, 0.85);
 
   h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
 
     a {
@@ -130,6 +133,24 @@ footer {
 // @media (min-width: 481px) and (max-width: 767px) {
   @media (min-width: 481px) and (max-width: 1024px) {
   /* ##Device = Low Resolution Tablets, Mobiles (Landscape) ##Screen = B/w 481px to 767px */
+  body {
+    background: none;
+
+    &::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('/img/main/bg_main.jpg');
+      background-repeat: repeat;
+      background-position: 50% 80%;
+      background-size: 100%;
+    }
+  }
+
   #app {
     padding-top: 7.87vw;
   }
@@ -140,7 +161,7 @@ footer {
 
     h1 {
       a {
-        font-size: 1.56vw;
+        font-size: 1.94vw;
       }
     }
 
@@ -155,6 +176,7 @@ footer {
   }
 
   footer {
+    box-sizing: border-box;
     height: 7.81vw;
     border-top-width: 0.15vw;
     font-size: 1.56vw;
@@ -162,6 +184,24 @@ footer {
 }
 @media (min-width: 320px) and (max-width: 480px) {
   /* ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+  body {
+    background: none;
+
+    &::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('/img/main/bg_main.jpg');
+      background-repeat: repeat;
+      background-position: 50% 80%;
+      background-size: 100%;
+    }
+  }
+
   #app {
     padding-top: 15.65vw;
   }
@@ -187,6 +227,7 @@ footer {
   }
 
   footer {
+    box-sizing: border-box;
     height: 15.62vw;
     border-top-width: 0.15vw;
     font-size: 3.12vw;

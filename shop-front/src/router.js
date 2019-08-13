@@ -5,6 +5,8 @@ import Signin from './views/Signin.vue'
 import Signup from './views/Signup.vue'
 import Blank from './views/Blank.vue'
 import Detail from './views/Detail.vue'
+import Order from './views/Order.vue'
+import History from './views/History.vue'
 
 Vue.use(Router)
 
@@ -31,6 +33,16 @@ export default new Router({
       path: '/detail',
       name: 'detail',
       component: Detail
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: Order
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: History
     },
     {
       path: '/*',

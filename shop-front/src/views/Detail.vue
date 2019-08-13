@@ -11,33 +11,37 @@
         <!-- <h3></h3> -->
         <div class="infomation">
           <img src="/img/product/img_food01.jpg" alt="food">
-          <div class="scroll">
-            <table>
-              <colgroup>
-                <col style="width:50%">
-                <col style="width:50%">
-              </colgroup>
-              <caption>제품정보</caption>
-              <tbody>
-                <tr>
-                  <th scope="row">용량</th>
-                  <td>1Kg</td>
-                </tr>
-                <tr>
-                  <th scope="row">재료(원산지)</th>
-                  <td>재료(원산지)</td>
-                </tr>
-                <tr>
-                  <th scope="row">가격</th>
-                  <td>15,000원</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="buttons">
-            <button>주문하기</button>
+          <div class="infomation-inner">
+            <div class="scroll">
+              <table>
+                <colgroup>
+                  <col style="width:50%">
+                  <col style="width:50%">
+                </colgroup>
+                <caption>제품정보</caption>
+                <tbody>
+                  <tr>
+                    <th scope="row">용량</th>
+                    <td>1Kg</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">재료(원산지)</th>
+                    <td>재료(원산지)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">가격</th>
+                    <td>15,000원</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="buttons">
+              <router-link to="/">목록</router-link>
+              <router-link to="/order">주문</router-link>
+            </div>
           </div>
         </div>
+
         <div class="detail">
           <p>
             제품 설명 제품 설명 제품 설명 제품 설명 제품 설명 제품 설명 제품 설명 제품 설명 제품 설명
@@ -125,62 +129,75 @@ main {
           border: 0.1rem solid rgba(0, 0, 0, 1);
         }
 
-        .scroll {
-          overflow-x: hidden;
-          overflow-y: auto;
-          height: 50rem;
+        .infomation-inner {
+          position: relative;
 
-          table {
-            width: 100%;
-            border-collapse: collapse;
-            border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
+          .scroll {
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+            height: 50rem;
 
-            caption {
-              display: none;
-            }
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
 
-            tbody {
-              tr {
-                th {
-                  padding: 1rem 0;
-                  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-                  font-weight: 400;
-                  font-size: 1.4rem;
-                  text-align: left;
-                  color: rgba(255, 255, 255, 1);
-                }
+              caption {
+                display: none;
+              }
 
-                td {
-                  padding: 1rem 0;
-                  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-                  font-weight: 400;
-                  font-size: 1.4rem;
-                  text-align: right;
-                  color: rgba(255, 255, 255, 1);
+              tbody {
+                tr {
+                  th {
+                    padding: 1rem 0;
+                    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    text-align: left;
+                    color: rgba(255, 255, 255, 1);
+                  }
+
+                  td {
+                    padding: 1rem 0;
+                    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    text-align: right;
+                    color: rgba(255, 255, 255, 1);
+                  }
                 }
               }
             }
           }
-        }
 
-        .buttons {
-          display: flex;
-          justify-content: stretch;
-          align-items: stretch;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          width: 53rem;
-          height: 4rem;
+          .buttons {
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+            width: 100%;
+            height: 4rem;
 
-          button {
-            flex: 1;
-            border: 0;
-            background-color: rgba(255, 0, 0, 1);
-            font-family: 'Noto Sans KR';
-            font-weight: 400;
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 1);
+            button, a {
+              flex: 1;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-left: 1rem;
+              border: 0;
+              background-color: rgba(255, 0, 0, 1);
+              font-family: 'Noto Sans KR';
+              font-weight: 400;
+              font-size: 1.4rem;
+              text-decoration: none;
+              color: rgba(255, 255, 255, 1);
+
+              &:first-child {
+                margin-left: 0;
+                background-color: rgba(255, 255, 255, 1);
+                color: rgba(0, 0, 0, 1);
+              }
+            }
           }
         }
       }
@@ -224,7 +241,7 @@ main {
 
       h2 {
         padding: 1.38vw 0;
-        font-size: 1.56vw;
+        font-size: 1.94vw;
       }
 
       article {
@@ -237,38 +254,48 @@ main {
             border-width: 0.13vw;
           }
 
-          .scroll {
-            height: 50vw;
+          .infomation-inner {
+            .scroll {
+              height: 44.45vw;
 
-            table {
-              border-top-width: 0.13vw;
+              table {
+                border-top-width: 0.13vw;
 
-              caption {}
+                caption {}
 
-              tbody {
-                tr {
-                  th {
-                    padding: 1.69vw 0;
-                    border-bottom-width: 0.13vw;
-                    font-size: 1.56vw;
-                  }
+                tbody {
+                  tr {
+                    th {
+                      padding: 1.69vw 0;
+                      border-bottom-width: 0.13vw;
+                      font-size: 1.56vw;
+                    }
 
-                  td {
-                    padding: 1.69vw 0;
-                    border-bottom-width: 0.13vw;
-                    font-size: 1.56vw;
+                    td {
+                      padding: 1.69vw 0;
+                      border-bottom-width: 0.13vw;
+                      font-size: 1.56vw;
+                    }
                   }
                 }
               }
             }
-          }
 
-          .buttons {
-            width: 47.62vw;
-            height: 5.55vw;
+            .buttons {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              box-sizing: border-box;
+              margin-top: 0;
+              padding: 0.69vw;
+              height: 7.81vw;
+              border-top: 0.13vw solid rgba(255, 255, 255, 0.25);
+              background-color: rgba(0, 0, 0, 1);
 
-            button {
-              font-size: 1.56vw;
+              button, a {
+                margin-left: 0.69vw;
+                font-size: 1.94vw;
+              }
             }
           }
         }
@@ -299,7 +326,7 @@ main {
 
       h2 {
         padding: 2.77vw 0;
-        font-size: 3.12vw;
+        font-size: 3.88vw;
       }
 
       article {
@@ -314,44 +341,53 @@ main {
             border-width: 0.27vw;
           }
 
-          .scroll {
-            height: auto;
+          .infomation-inner {
+            .scroll {
+              height: auto;
 
-            table {
-              margin-top: 2.77vw;
-              width: 100%;
-              border-top-width: 0.27vw;
+              table {
+                margin-top: 2.77vw;
+                width: 100%;
+                border-top-width: 0.27vw;
 
-              caption {
-                display: none;
-              }
+                caption {
+                  display: none;
+                }
 
-              tbody {
-                tr {
-                  th {
-                    padding: 1.38vw 0;
-                    border-bottom-width: 0.27vw;
-                    font-size: 3.12vw;
-                  }
+                tbody {
+                  tr {
+                    th {
+                      padding: 1.38vw 0;
+                      border-bottom-width: 0.27vw;
+                      font-size: 3.12vw;
+                    }
 
-                  td {
-                    padding: 1.38vw 0;
-                    border-bottom-width: 0.27vw;
-                    font-size: 3.12vw;
+                    td {
+                      padding: 1.38vw 0;
+                      border-bottom-width: 0.27vw;
+                      font-size: 3.12vw;
+                    }
                   }
                 }
               }
             }
-          }
 
-          .buttons {
-            position: initial;
-            margin-top: 2.77vw;
-            width: 100%;
-            height: 11.11vw;
+            .buttons {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              box-sizing: border-box;
+              margin-top: 0;
+              padding: 1.38vw;
+              width: 100%;
+              height: 15.62vw;
+              border-top: 0.27vw solid rgba(255, 255, 255, 0.25);
+              background-color: rgba(0, 0, 0, 1);
 
-            button {
-              font-size: 3.12vw;
+              button, a {
+                margin-left: 1.38vw;
+                font-size: 3.88vw;
+              }
             }
           }
         }

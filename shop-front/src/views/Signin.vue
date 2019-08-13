@@ -3,11 +3,20 @@
     <section>
       <!-- <h2>로그인</h2> -->
       <article>
-        <label for="email">이메일</label>
-        <input type="text" id="email" name="EMAIL">
-        <label for="password">비밀번호</label>
-        <input type="password" id="password" name="PASSWORD">
+        <ul>
+          <li>
+            <label for="email">이메일</label>
+            <input type="text" id="email" name="EMAIL">
+          </li>
+          <li>
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="PASSWORD">
+          </li>
+        </ul>
         <button>로그인</button>
+        <span class="signup">
+          <router-link to="/signup">회원가입</router-link>
+        </span>
       </article>
     </section>
   </main>
@@ -43,30 +52,44 @@ main {
     }
 
     article {
-      label {
-        display: block;
-        box-sizing: border-box;
-        padding: 0.5rem 0;
-        width: 25rem;
-        font-weight: 300;
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 1);
-      }
+      ul {
+        margin: 0;
+        padding: 0;
 
-      input {
-        display: block;
-        box-sizing: border-box;
-        margin: 0 0 1rem 0;
-        padding: 0.5rem;
-        width: 25rem;
-        height: 3.5rem;
-        border: 0.1rem solid rgba(255, 255, 255, 0.5);
-        border-radius: 0.25rem;
-        background-color: rgba(0, 0, 0, 0.5);
-        font-family: 'Noto Sans KR';
-        font-weight: 300;
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 1);
+        li {
+          list-style: none;
+          margin-top: 1rem;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          label {
+            display: block;
+            box-sizing: border-box;
+            margin-bottom: 0.5rem;
+            width: 25rem;
+            font-weight: 300;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 1);
+          }
+
+          input {
+            display: block;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0.5rem;
+            width: 25rem;
+            height: 3.5rem;
+            border: 0.1rem solid rgba(255, 255, 255, 0.5);
+            border-radius: 0.25rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-family: 'Noto Sans KR';
+            font-weight: 300;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 1);
+          }
+        }
       }
 
       button {
@@ -81,6 +104,19 @@ main {
         font-weight: 700;
         font-size: 1.4rem;
         color: rgba(0, 0, 0, 1);
+      }
+
+      span {
+        display: block;
+        margin-top: 1rem;
+        text-align: center;
+
+        a {
+          font-family: 'Noto Sans KR';
+          font-weight: 300;
+          font-size: 1.4rem;
+          color: rgba(255, 255, 255, 1);
+        }
       }
     }
   }
@@ -110,28 +146,54 @@ main {
         box-sizing: border-box;
         padding: 0.78vw;
 
-        label {
-          box-sizing: border-box;
-          padding: 0.78vw 0;
-          width: 27.77vw;
-          height: 4.16vw;
-          font-size: 1.56vw;
-        }
+        ul {
+          &::after {
+            content: '';
+            display: block;
+            clear: both;
+          }
 
-        input {
-          box-sizing: border-box;
-          padding: 0.78vw;
-          width: 27.77vw;
-          height: 4.16vw;
-          border-width: 0.12vw;
-          border-radius: 0.34vw;
-          font-size: 1.56vw;
+          li {
+            float: left;
+            margin-top: 0;
+            margin-left: 0.78vw;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            label {
+              box-sizing: border-box;
+              margin-bottom: 0.78vw;
+              width: 27.77vw;
+              font-size: 1.56vw;
+            }
+
+            input {
+              box-sizing: border-box;
+              padding: 0.78vw;
+              width: 27.77vw;
+              height: 4.16vw;
+              border-width: 0.12vw;
+              border-radius: 0.34vw;
+              font-size: 1.56vw;
+            }
+          }
         }
 
         button {
-          width: 27.77vw;
+          width: 100%;
           height: 4.16vw;
-          font-size: 1.56vw;
+          font-size: 1.94vw;
+        }
+
+        span {
+          margin-top: 0.78vw;
+
+          a {
+            margin-top: 0.78vw;
+            font-size: 1.56vw;
+          }
         }
       }
     }
@@ -152,28 +214,42 @@ main {
         padding: 1.56vw;
         width: 100%;
 
-        label {
-          box-sizing: border-box;
-          padding: 1.56vw 0;
-          width: 100%;
-          height: 8.33vw;
-          font-size: 3.12vw;
-        }
+        ul {
+          li {
+            label {
+              box-sizing: border-box;
+              padding: 1.56vw 0;
+              width: 100%;
+              height: 8.33vw;
+              font-size: 3.12vw;
+            }
 
-        input {
-          box-sizing: border-box;
-          padding: 1.56vw;
-          width: 100%;
-          height: 8.33vw;
-          border-width: 0.27vw;
-          border-radius: 0.69vw;
-          font-size: 3.12vw;
+            input {
+              box-sizing: border-box;
+              margin-bottom: 1.56vw;
+              padding: 1.56vw;
+              width: 100%;
+              height: 8.33vw;
+              border-width: 0.27vw;
+              border-radius: 0.69vw;
+              font-size: 3.12vw;
+            }
+          }
         }
 
         button {
+          margin-top: 1.56vw;
           width: 100%;
           height: 8.33vw;
-          font-size: 3.12vw;
+          font-size: 3.88vw;
+        }
+
+        span {
+          margin-top: 1.56vw;
+
+          a {
+            font-size: 3.12vw;
+          }
         }
       }
     }
