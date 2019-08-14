@@ -68,7 +68,7 @@
         </div>
         <div class="buttons">
           <router-link to="/detail">취소</router-link>
-          <router-link to="/history">주문</router-link>
+          <router-link to="/complete">주문</router-link>
         </div>
       </article>
     </section>
