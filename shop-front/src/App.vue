@@ -1,27 +1,36 @@
 <template>
   <div id="app">
     <header>
-      <h1><router-link to="/">SHOP</router-link></h1>
-      <menu>
-        <router-link to="/signin">LOGIN</router-link>
-        <!-- <router-link to="/signup">회원가입</router-link> -->
-      </menu>
+      <div class="wrapper">
+        <h1><router-link to="/">SHOP</router-link></h1>
+        <menu>
+          <router-link to="/signin">LOGIN</router-link>
+        </menu>
+      </div>
     </header>
-
     <router-view></router-view>
-
-    <!-- <aside>
-      <nav>
-        <a href="">LINK</a>
-        <a href="">LINK</a>
-        <a href="">LINK</a>
-      </nav>
-    </aside> -->
-    <footer>COPYRIGHT</footer>
+    <footer>
+      <div class="wrapper">
+        COPYRIGHT
+      </div>
+    </footer>
   </div>
 </template>
 
 <style lang="scss">
+@mixin font($size, $weight) {
+  font: {
+    family: 'Noto Sans KR';
+    weight: $weight;
+    style: normal;
+    size: $size;
+  }
+
+  line-height: 1;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
 html, body {
   height: 100%;
 }
@@ -52,86 +61,92 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
+  box-sizing: border-box;
   width: 100%;
   height: 10rem;
-  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.75);
 
-  h1 {
+  .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-
-    a {
-      font-weight: 300;
-      font-size: 1.4rem;
-      line-height: 1;
-      vertical-align: middle;
-      text-decoration: none;
-      color: rgba(255, 255, 255, 1);
-    }
-  }
-
-  menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 1rem;
-    margin: 0;
-    padding: 0;
+    position: relative;
+    margin: 0 auto;
+    width: 108rem;
     height: 100%;
 
-    a {
-      margin-left: 0.5rem;
-      font-weight: 300;
-      font-size: 1.4rem;
-      text-decoration: none;
-      color: rgba(255, 255, 255, 1);
-    }
-  }
-}
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      height: 100%;
 
-aside {
-  nav {
-    a {}
+      a {
+        @include font (1.4rem, 300);
+      }
+    }
+
+    menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+
+      a {
+        margin-left: 0.5rem;
+        @include font (1.4rem, 300);
+      }
+    }
   }
 }
 
 footer {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
   height: 10rem;
   border-top: 0.1rem solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(0, 0, 0, 0.85);
-  font-weight: 300;
-  font-size: 1.6rem;
-  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.75);
+
+  .wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 108rem;
+    height: 100%;
+    @include font (1.4rem, 300);
+  }
 }
+
 @media (min-width: 1281px) {
   /* ##Device = Desktops ##Screen = 1281px to higher resolution desktops */
 }
+
 @media (min-width: 1025px) and (max-width: 1280px) {
   /* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px */
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
   /* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
 }
+
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   /* ##Device = Tablets, Ipads (landscape) ##Screen = B/w 768px to 1024px */
 }
+
 // @media (min-width: 481px) and (max-width: 767px) {
-  @media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 481px) and (max-width: 1024px) {
   /* ##Device = Low Resolution Tablets, Mobiles (Landscape) ##Screen = B/w 481px to 767px */
   body {
     background: none;
@@ -152,36 +167,45 @@ footer {
   }
 
   #app {
-    padding-top: 7.87vw;
+    padding-top: 6.94vw;
   }
 
   header {
-    height: 7.87vw;
-    border-bottom-width: 0.07vw;
+    height: 6.94vw;
+    border-bottom-width: 0.13vw;
+    box-shadow: 0 0 0.69vw rgba(0, 0, 0, 0.75);
 
-    h1 {
-      a {
-        font-size: 1.94vw;
+    .wrapper {
+      width: 100%;
+
+      h1 {
+        a {
+          @include font (1.66vw, 400);
+        }
       }
-    }
 
-    menu {
-      right: 0.78vw;
+      menu {
+        margin-right: 0.69vw;
 
-      a {
-        margin-left: 0.39vw;
-        font-size: 1.56vw;
+        a {
+          margin-left: 0.69vw;
+          @include font (1.66vw, 400);
+        }
       }
     }
   }
 
   footer {
-    box-sizing: border-box;
-    height: 7.81vw;
-    border-top-width: 0.15vw;
-    font-size: 1.56vw;
+    height: 6.94vw;
+    border-top-width: 0.13vw;
+
+    .wrapper {
+      width: 100%;
+      @include font (1.38vw, 300);
+    }
   }
 }
+
 @media (min-width: 320px) and (max-width: 480px) {
   /* ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
   body {
@@ -203,34 +227,42 @@ footer {
   }
 
   #app {
-    padding-top: 15.65vw;
+    padding-top: 13.88vw;
   }
 
   header {
-    height: 15.65vw;
-    border-bottom-width: 0.15vw;
+    height: 13.88vw;
+    border-bottom-width: 0.27vw;
+    box-shadow: 0 0 1.38vw rgba(0, 0, 0, 0.75);
 
-    h1 {
-      a {
-        font-size: 3.12vw;
+    .wrapper {
+      width: 100%;
+
+      h1 {
+        a {
+          @include font (3.33vw, 400);
+        }
       }
-    }
 
-    menu {
-      right: 1.56vw;
+      menu {
+        margin-right: 1.38vw;
 
-      a {
-        margin-left: 0.78vw;
-        font-size: 3.12vw;
+        a {
+          margin-left: 1.38vw;
+          @include font (3.33vw,400);
+        }
       }
     }
   }
 
   footer {
-    box-sizing: border-box;
-    height: 15.62vw;
-    border-top-width: 0.15vw;
-    font-size: 3.12vw;
+    height: 13.88vw;
+    border-top-width: 0.27vw;
+
+    .wrapper {
+      width: 100%;
+      @include font (2.77vw, 300);
+    }
   }
 }
 </style>

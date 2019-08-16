@@ -1,47 +1,29 @@
 <template>
-  <main>
-    <!-- <aside>
-      <menu>
-        <button>주문하기</button>
-      </menu>
-    </aside> -->
-    <section>
-      <h2>제품명</h2>
-      <article>
-        <!-- <h3></h3> -->
-        <div class="infomation">
-          <img src="/img/product/img_food01.jpg" alt="food">
-          <div class="infomation-inner">
-            <div class="scroll">
-              <table>
-                <colgroup>
-                  <col style="width:50%">
-                  <col style="width:50%">
-                </colgroup>
-                <caption>제품정보</caption>
-                <tbody>
-                  <tr>
-                    <th scope="row">용량</th>
-                    <td>1Kg</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">재료(원산지)</th>
-                    <td>재료(원산지)</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">가격</th>
-                    <td>15,000원</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="buttons">
-              <router-link to="/">목록</router-link>
-              <router-link to="/order">주문</router-link>
-            </div>
+  <main class="container">
+    <section class="contents">
+      <article class="wrapper">
+        <h3 class="name">제품명</h3>
+        <img class="image" src="/img/product/img_food01.jpg" alt="food">
+        <div class="info">
+          <ul>
+            <li>
+              <span>용량</span>
+              <span>1Kg</span>
+            </li>
+            <li>
+              <span>재료(원산지)</span>
+              <span>재료(원산지)</span>
+            </li>
+            <li>
+              <span>가격</span>
+              <span>15,000원</span>
+            </li>
+          </ul>
+          <div class="buttons">
+            <router-link to="/" class="default">목록</router-link>
+            <router-link to="/order" class="active">주문</router-link>
           </div>
         </div>
-
         <div class="detail">
           <p>
             제품 설명 제품 설명 제품 설명 제품 설명 제품 설명 제품 설명 제품 설명 제품 설명 제품 설명
@@ -88,314 +70,277 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-  flex: 1;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-
-  aside {
-    menu {
-      button {}
-    }
+@mixin font($size, $weight) {
+  font: {
+    family: 'Noto Sans KR';
+    weight: $weight;
+    style: normal;
+    size: $size;
   }
 
-  section {
-    box-sizing: border-box;
-    padding: 0 0 4rem 0;
+  line-height: 1;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.container {
+  flex: 1;
+
+  .contents {
+    margin: 0 auto;
+    padding-bottom: 5rem;
     width: 108rem;
 
-    h2 {
-      margin: 0;
-      padding: 2rem 0;
-      font-weight: 300;
-      font-size: 1.4rem;
-      color: rgba(255, 255, 255, 1);
-    }
+    .wrapper {
+      display: flex;
+      flex-flow: wrap;
+      padding-top: 2rem;
 
-    article {
-      .infomation {
-        position: relative;
-        box-sizing: border-box;
-        padding-left: 55rem;
-        min-height: 54rem;
+      .name {
+        margin: 0;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+        width: 100%;
+        @include font (1.4rem, 300);
+      }
 
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          box-sizing: border-box;
-          width: 54rem;
-          border: 0.1rem solid rgba(0, 0, 0, 1);
-        }
+      .image {
+        width: 54rem;
+        height: 54rem;
+      }
 
-        .infomation-inner {
-          position: relative;
+      .info {
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        margin-left: 1rem;
 
-          .scroll {
-            overflow-x: hidden;
-            overflow-y: auto;
-            position: relative;
-            height: 50rem;
+        ul {
+          flex: 1;
+          margin: 0 0 1rem;
+          padding: 0;
+          border-top: 0.1rem solid rgba(255, 255, 255, 0.25);
 
-            table {
-              width: 100%;
-              border-collapse: collapse;
-              border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
+          li {
+            display: flex;
+            padding: 1rem 0;
+            border-bottom: 0.1rem solid rgba(255, 255, 255, 0.25);
+            list-style: none;
 
-              caption {
-                display: none;
-              }
+            span {
+              @include font(1.4rem, 300);
 
-              tbody {
-                tr {
-                  th {
-                    padding: 1rem 0;
-                    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-                    font-weight: 400;
-                    font-size: 1.4rem;
-                    text-align: left;
-                    color: rgba(255, 255, 255, 1);
-                  }
-
-                  td {
-                    padding: 1rem 0;
-                    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
-                    font-weight: 400;
-                    font-size: 1.4rem;
-                    text-align: right;
-                    color: rgba(255, 255, 255, 1);
-                  }
-                }
+              &:last-child {
+                flex: 1;
+                text-align: right;
               }
             }
           }
+        }
 
-          .buttons {
+        .buttons {
+          display: flex;
+          justify-content: flex-start;
+          align-items: stretch;
+          height: 4rem;
+
+          & * {
+            flex: 1;
             display: flex;
-            justify-content: stretch;
-            align-items: stretch;
-            width: 100%;
-            height: 4rem;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1rem;
+            padding: 0;
+            border: 0;
+            @include font(1.4rem, 400);
 
-            button, a {
-              flex: 1;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin-left: 1rem;
-              border: 0;
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &.default {
+              background-color: rgba(255, 255, 255, 1);
+              color: rgba(0, 0, 0, 1);
+            }
+
+            &.active {
               background-color: rgba(255, 0, 0, 1);
-              font-family: 'Noto Sans KR';
-              font-weight: 400;
-              font-size: 1.4rem;
-              text-decoration: none;
-              color: rgba(255, 255, 255, 1);
-
-              &:first-child {
-                margin-left: 0;
-                background-color: rgba(255, 255, 255, 1);
-                color: rgba(0, 0, 0, 1);
-              }
             }
           }
         }
       }
 
       .detail {
+        margin-top: 2rem;
+        border-top: 0.1rem solid rgba(255, 255, 255, 0.25);
+        padding-top: 1rem;
+
         p {
-          margin: 3rem 0 0 0;
-          font-size: 1.4rem;
-          color: rgba(255, 255, 255, 1);
+          margin: 0;
+          @include font(1.4rem, 300);
+          line-height: 1.5;
         }
       }
     }
   }
 }
+
 @media (min-width: 1281px) {
   /* ##Device = Desktops ##Screen = 1281px to higher resolution desktops */
 }
+
 @media (min-width: 1025px) and (max-width: 1280px) {
   /* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px */
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
+  /* ##Device = Tablets, Ipads (porliait) ##Screen = B/w 768px to 1024px */
 }
+
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   /* ##Device = Tablets, Ipads (landscape) ##Screen = B/w 768px to 1024px */
 }
+
 // @media (min-width: 481px) and (max-width: 767px) {
 @media (min-width: 481px) and (max-width: 1024px) {
   /* ##Device = Low Resolution Tablets, Mobiles (Landscape) ##Screen = B/w 481px to 767px */
-  main {
-    aside {
-      menu {
-        button {}
-      }
-    }
-
-    section {
+  .container {
+    .contents {
       box-sizing: border-box;
       padding: 0 0.69vw 3.47vw;
       width: 100%;
 
-      h2 {
-        padding: 1.38vw 0;
-        font-size: 1.94vw;
-      }
+      .wrapper {
+        padding-top: 1.38vw;
 
-      article {
-        .infomation {
-          padding-left: 51vw;
-          min-height: 50vw;
+        .name {
+          padding: 0.69vw 0;
+          margin-bottom: 0.69vw;
+          @include font (1.66vw, 400);
+        }
 
-          img {
-            width: 50vw;
-            border-width: 0.13vw;
-          }
+        .image {
+          width: 27.5vw;
+          height: auto;
+        }
 
-          .infomation-inner {
-            .scroll {
-              height: 44.45vw;
+        .info {
+          margin-left: 0.69vw;
 
-              table {
-                border-top-width: 0.13vw;
+          ul {
+            border-top-width: 0.13vw;
 
-                caption {}
+            li {
+              padding: 0.69vw 0;
+              border-bottom-width: 0.13vw;
 
-                tbody {
-                  tr {
-                    th {
-                      padding: 1.69vw 0;
-                      border-bottom-width: 0.13vw;
-                      font-size: 1.56vw;
-                    }
-
-                    td {
-                      padding: 1.69vw 0;
-                      border-bottom-width: 0.13vw;
-                      font-size: 1.56vw;
-                    }
-                  }
-                }
+              span {
+                @include font(1.38vw, 300);
               }
             }
+          }
 
-            .buttons {
-              position: fixed;
-              left: 0;
-              bottom: 0;
-              box-sizing: border-box;
-              margin-top: 0;
-              padding: 1.38vw;
-              height: 7.81vw;
-              border-top: 0.13vw solid rgba(255, 255, 255, 0.5);
-              background-color: rgba(0, 0, 0, 1);
+          .buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            box-sizing: border-box;
+            padding: 0.69vw;
+            width: 100%;
+            height: 6.94vw;
+            border-top-width: 0.13vw;
+            background-color: rgba(0, 0, 0, 1);
 
-              button, a {
-                margin-left: 1.38vw;
-                font-size: 1.94vw;
-              }
+            & * {
+              margin-left: 0.69vw;
+              @include font(1.66vw, 400);
             }
           }
         }
 
         .detail {
+          margin-top: 1.38vw;
+          border-top: 0;
+          padding-top: 1.69vw;
+
           p {
-            margin: 2.77vw 0 0 0;
-            font-size: 1.56vw;
+            @include font(1.38vw, 300);
+            line-height: 1.5;
           }
         }
       }
     }
   }
 }
-@media (min-width: 320px) and (max-width: 480px) {
-  /* ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
-  main {
-    aside {
-      menu {
-        button {}
-      }
-    }
 
-    section {
+@media (min-width: 320px) and (max-width: 480px) {
+  /* ##Device = Most of spane Smartphones Mobiles (Porliait) ##Screen = B/w 320px to 479px */
+  .container {
+    .contents {
       box-sizing: border-box;
       padding: 0 1.38vw 6.94vw;
       width: 100%;
 
-      h2 {
-        padding: 2.77vw 0;
-        font-size: 3.88vw;
-      }
+      .wrapper {
+        flex-flow: column;
+        padding-top: 2.77vw;
 
-      article {
-        .infomation {
-          padding-left: 0;
-          min-height: initial;
+        .name {
+          padding: 1.38vw 0;
+          margin-bottom: 1.38vw;
+          @include font (3.33vw, 400);
+        }
 
-          img {
-            position: initial;
-            box-sizing: border-box;
-            width: 100%;
-            border-width: 0.27vw;
-          }
+        .image {
+          width: 100%;
+          height: auto;
+        }
 
-          .infomation-inner {
-            .scroll {
-              height: auto;
+        .info {
+          margin-left: 0;
 
-              table {
-                margin-top: 2.77vw;
-                width: 100%;
-                border-top-width: 0.27vw;
+          ul {
+            margin: 0;
+            border-top-width: 0.27vw;
 
-                caption {
-                  display: none;
-                }
+            li {
+              padding: 1.38vw 0;
+              border-bottom-width: 0.27vw;
 
-                tbody {
-                  tr {
-                    th {
-                      padding: 1.38vw 0;
-                      border-bottom-width: 0.27vw;
-                      font-size: 3.12vw;
-                    }
-
-                    td {
-                      padding: 1.38vw 0;
-                      border-bottom-width: 0.27vw;
-                      font-size: 3.12vw;
-                    }
-                  }
-                }
+              span {
+                @include font(2.77vw, 300);
               }
             }
+          }
 
-            .buttons {
-              position: fixed;
-              left: 0;
-              bottom: 0;
-              box-sizing: border-box;
-              margin-top: 0;
-              padding: 2.76vw;
-              width: 100%;
-              height: 15.62vw;
-              border-top: 0.27vw solid rgba(255, 255, 255, 0.5);
-              background-color: rgba(0, 0, 0, 1);
+          .buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            box-sizing: border-box;
+            padding: 1.38vw;
+            width: 100%;
+            height: 13.88vw;
+            border-top-width: 0.27vw;
+            background-color: rgba(0, 0, 0, 1);
 
-              button, a {
-                margin-left: 2.76vw;
-                font-size: 3.88vw;
-              }
+            & * {
+              margin-left: 1.38vw;
+              @include font(3.33vw, 400);
             }
           }
         }
 
         .detail {
+          margin-top: 2.77vw;
+          border-top: 0;
+          padding-top: 1.38vw;
+
           p {
-            margin: 5.55vw 0 0 0;
-            font-size: 3.12vw;
+            @include font(2.77vw, 300);
+            line-height: 1.5;
           }
         }
       }
